@@ -109,7 +109,7 @@ defmodule Redix do
   @type command() :: [String.Chars.t()]
   @type connection() :: GenServer.server()
 
-  @default_timeout 5000
+  @default_timeout Application.get_env(:redix, :default_timeout, 5000)
 
   @doc """
   Starts a connection to Redis.
